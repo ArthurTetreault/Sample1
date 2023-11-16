@@ -39,11 +39,22 @@
   [:section.section>div.container>div.content
    [:img {:src "/img/warning_clojure.png"}]])
 
+(def addItem1 (r/atom[] ))
+
+(defn hero[]
+  [:section.section>div.container>div.content
+   [:p "Testing home hero page"]
+   ]
+)
 
 (defn home-page []
-  [:section.section>div.container>div.content
-   (when-let [docs (:docs @session)]
-     [:div {:dangerouslySetInnerHTML {:__html (md->html docs)}}])])
+  [hero])
+
+(comment
+  (+ 1 1)
+
+  )
+
 
 (def pages
   {:home #'home-page
